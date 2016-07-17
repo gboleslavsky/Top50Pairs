@@ -3,8 +3,11 @@ Interview Coding Exercise
 
 to run:
 1. Make sure jre, git and sbt are installed.
+
 2. git clone https://github.com/gboleslavsky/Top50Pairs.git
+
 3. cd Top50Pairs
+
 4. sbt run
 
 this assumes that the input file is in the same folder as where you are running the app from and is
