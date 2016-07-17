@@ -6,6 +6,7 @@ Arctic Monkeys, MGMT
 Arctic Monkeys, Muse
 Arctic Monkeys, Nirvana
 Arctic Monkeys, Oasis
+Arctic Monkeys, Placebo
 Arctic Monkeys, Radiohead
 Arctic Monkeys, The Beatles
 Arctic Monkeys, The Killers
@@ -29,12 +30,15 @@ Death Cab for Cutie, Radiohead
 Death Cab for Cutie, The Beatles
 Foo Fighters, Muse
 Foo Fighters, Nirvana
+Foo Fighters, Radiohead
 Foo Fighters, Red Hot Chili Peppers
 Franz Ferdinand, Muse
 Franz Ferdinand, Radiohead
 Franz Ferdinand, The Beatles
 Green Day, Muse
+Incubus, Muse
 Iron Maiden, Metallica
+Kasabian, Muse
 Ke$ha, Lady Gaga
 Kings of Leon, Muse
 Kings of Leon, Radiohead

@@ -3,13 +3,11 @@ import scala.collection.mutable
 import scala.io.Source
 
 object Top50 extends App {
-  val POPULARITY          = 50
-  val LINES_IN_ONE_CHUNK  = 200
+  val POPULARITY =  50
+  val inputPath =   "Artist_lists_small.txt"
+  val outputPath =  "Output_" + inputPath
 
-  val inputPath = "Artist_lists_small.txt"
-  val outputPath = "Output_" + inputPath
-
-  new PopularFavoriteArtists(inputPath, POPULARITY)  //line that runs everything
+  new PopularFavoriteArtists(inputPath, POPULARITY).run //line that runs everything
 
   class PopularFavoriteArtists(inputPath: String, popularity: Int) {
     type Line = String
@@ -18,14 +16,14 @@ object Top50 extends App {
     var countsByFavorites = mutable.HashMap[Favorite, Int]()  //keeps temp MAP of not yet known to be popular pairs
     var popularFavorites =  mutable.MutableList[Favorite]()   //keeps pairs known to be popular
 
-    //-------------------------- MAIN ---------------------------------------------
-    for (line <- allArtistsAsListOfLines(inputPath)) {
-      for (f <- favorites(artists(line)))
-        if (! popularFavorites.contains(f))   //ignore pairs that are known to be popular already
-          updateFavorites(f)
+    def run() = {
+      for (line <- allArtistsAsListOfLines(inputPath)) {
+        for (f <- favorites(artists(line)))
+          if (!popularFavorites.contains(f)) //ignore pairs that are known to be popular already
+            updateFavorites(f)
+      }
+      writeAnswer(outputPath)
     }
-    writeAnswer(outputPath)
-    //-------------------------END OF MAIN ------------------------------------------
 
     def writeAnswer(outPath: String): Unit = {
       import java.io._
@@ -39,9 +37,9 @@ object Top50 extends App {
     def updateFavorites(f: Favorite) = {
       val currentPopularity = currentCount(f)
       countsByFavorites(f) = currentPopularity + 1
-      if (currentPopularity >= popularity){
+      if (currentPopularity + 1 >= popularity){
         popularFavorites  += f
-        countsByFavorites -= f //no need to keep track of pairs already known to be popular
+        countsByFavorites -= f    //no need to keep track of pairs already known to be popular
       }
     }
 
