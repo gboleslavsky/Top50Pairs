@@ -2,6 +2,15 @@ package top50
 import scala.collection.mutable
 import scala.io.Source
 
+/*
+Artist_lists_small.txt contains the favorite musical artists of 1000 users. Each line is a list of up to 50 artists, formatted as follows:
+Radiohead,Pulp,Morrissey,Delays,Stereophonics,Blur,Suede,Sleeper,The La's,Super Furry Animals,Iggy Pop\n Band of Horses,Smashing Pumpkins,The Velvet Underground,Radiohead,The Decemberists,Morrissey,Television\n
+etc.
+The program below uses this file as input and produces an output file containing a list of pairs of artists which appear TOGETHER in at least fifty different lists. For example, in the above sample, Radiohead and
+Morrissey appear together twice, but every other pair appears only once. The output file contains rows, each row being a pair. For example:
+Morrissey,Radiohead\n
+*/
+
 object Top50 extends App {
   val POPULARITY =  50
   val inputPath =   "Artist_lists_small.txt"
