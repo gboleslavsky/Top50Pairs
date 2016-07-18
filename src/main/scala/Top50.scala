@@ -61,6 +61,7 @@ object Top50 extends App {
 
     def favorites(artists: Seq[String]): Seq[Favorite] =
       artists //pairs must come out with elements sorted with no duplicates
+        .distinct        //if duplicates in the list, remove before generating pairs
         .combinations(2) //all combinations of size 2
         .toList          //convert to List of pairs
         .map(l => if((l(0) >= l(1)))
